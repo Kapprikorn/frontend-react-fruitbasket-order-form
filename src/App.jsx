@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 function App() {
   const [products, setProducts] = useState([
-    { name: 'Aarbeien', emoji: '🍓', counter: 0, id: 0 },
+    { name: 'Aardbeien', emoji: '🍓', counter: 0, id: 0 },
     { name: 'Bananen', emoji: '🍌', counter: 0, id: 1 },
     { name: 'Appels', emoji: '🍏', counter: 0, id: 2 },
     { name: 'Kiwi\'s', emoji: '🥝', counter: 0, id: 3 },
