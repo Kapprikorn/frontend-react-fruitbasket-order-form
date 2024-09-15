@@ -5,7 +5,7 @@ import './fruit-counter.css';
 export default function FruitCounter({ product, incrementCounter, decrementCounter }) {
 
   return (
-    <div className="wrapper">
+    <div className="wrapper-fruit-counter">
       <p className="emoji">{product.emoji}</p>
       <h2 className="name">{product.name}</h2>
       <button className="button-counter"

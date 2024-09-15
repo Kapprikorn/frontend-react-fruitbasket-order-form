@@ -2,6 +2,7 @@ import './App.css';
 import './css-reset.css';
 import FruitCounter from './components/fruit-counter/fruit-counter.jsx';
 import { useState } from 'react';
+import OrderForm from './components/order-form/order-form.jsx';
 
 function App() {
   const [products, setProducts] = useState([
@@ -58,6 +59,8 @@ function App() {
                       decrementCounter={decrementCounter} />
         <button onClick={resetBaskets}>Reset</button>
       </div>
+
+      <OrderForm />
     </div>
   );
 }
