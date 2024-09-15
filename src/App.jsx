@@ -71,17 +71,17 @@ function App() {
 
       <div className="product-wrapper">
         <FruitCounter product={products[0]}
-                      incrementCounter={incrementCounter}
-                      decrementCounter={decrementCounter} />
+                      incrementCounter={(id) => incrementCounter(id)}
+                      decrementCounter={(id) => decrementCounter(id)} />
         <FruitCounter product={products[1]}
-                      incrementCounter={incrementCounter}
-                      decrementCounter={decrementCounter} />
+                      incrementCounter={(id) => incrementCounter(id)}
+                      decrementCounter={(id) => decrementCounter(id)} />
         <FruitCounter product={products[2]}
-                      incrementCounter={incrementCounter}
-                      decrementCounter={decrementCounter} />
+                      incrementCounter={(id) => incrementCounter(id)}
+                      decrementCounter={(id) => decrementCounter(id)} />
         <FruitCounter product={products[3]}
-                      incrementCounter={incrementCounter}
-                      decrementCounter={decrementCounter} />
+                      incrementCounter={(id) => incrementCounter(id)}
+                      decrementCounter={(id) => decrementCounter(id)} />
         <button onClick={resetBaskets}>Reset</button>
       </div>
 
