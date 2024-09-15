@@ -1,0 +1,16 @@
+.wrapper-fruit-counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.button-counter {
+    height: 2em;
+    aspect-ratio: 1;
+}
