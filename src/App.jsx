@@ -1,16 +1,29 @@
 import './App.css';
 import './css-reset.css';
 import FruitCounter from './components/fruit-counter/fruit-counter.jsx';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import OrderForm from './components/order-form/order-form.jsx';
 
 function App() {
-  const [products, setProducts] = useState([
+  const initialProductState = [
     { name: 'Aardbeien', emoji: '🍓', counter: 0, id: 0 },
     { name: 'Bananen', emoji: '🍌', counter: 0, id: 1 },
     { name: 'Appels', emoji: '🍏', counter: 0, id: 2 },
     { name: 'Kiwi\'s', emoji: '🥝', counter: 0, id: 3 },
-  ]);
+  ];
+  const initialFormState = {
+    voornaam: '',
+    achternaam: '',
+    leeftijd: '',
+    postcode: '',
+    bezorgfrequentie: '',
+    bezorgtijd: '',
+    opmerking: '',
+    voorwaarden: false,
+  };
+
+  const [products, setProducts] = useState(initialProductState);
+  const [form, setForm] = React.useState(initialFormState);
 
   function incrementCounter(id) {
     const newProductList = products.map(aProduct => {
@@ -33,11 +46,23 @@ function App() {
   }
 
   function resetBaskets() {
-    const newProductList = products.map(aProduct => {
-      return { ...aProduct, counter: 0 };
-    });
+    setProducts(initialProductState);
+  }
 
-    setProducts(newProductList);
+  function resetForm() {
+    setForm(initialFormState);
+  }
+
+  function changeForm(name, value) {
+    setForm({...form, [name]: value});
+  }
+
+  function onSubmit(submitEvent) {
+    submitEvent.preventDefault();
+    console.table(form);
+
+    resetBaskets();
+    resetForm();
   }
 
   return (
@@ -60,7 +85,10 @@ function App() {
         <button onClick={resetBaskets}>Reset</button>
       </div>
 
-      <OrderForm />
+      <OrderForm form={form}
+                 onSubmit={(event) => onSubmit(event)}
+                 changeForm={(name, value) => changeForm(name, value)}
+      />
     </div>
   );
 }

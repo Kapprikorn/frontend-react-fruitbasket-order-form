@@ -5,7 +5,7 @@
   gap:            8px;
 }
 
-.radio-button {
+.input-button {
   display:        flex;
   flex-direction: row;
   gap:            4px;
